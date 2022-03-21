@@ -44,7 +44,7 @@ generateEl.addEventListener('click', () =>{
 
 function generatePassword(lower, upper, number, symbol, length){
     // initialise the generated password
-    const generatedPassword = ''
+    let generatedPassword = ''
 
     // get the count
     const typeCount = upper + lower + number + symbol
@@ -69,23 +69,24 @@ function generatePassword(lower, upper, number, symbol, length){
     const finalPassword = generatedPassword.slice(0, length).split('').sort(() => Math.random() - 0.5).join('')
 
     return finalPassword
-
-    for(let i = 0; i < 
-    }
 }
 // create the clipboard function
-clipboardEl.addEventListener('click', () =>{
-    const textarea = document.createElement('textarea')
-    const password = resultEl.innertext
+clipboardEl.addEventListener('click', () => {
+    let textarea = document.createElement('textarea')
+    let password = resultEl.innerText
+
+    console.log(password)
 
     if(!password){
-        return ''
+        return;
     }
 
-    textarea = password.value
-    document.body.appendChild = textarea
+    textarea.value = password
+    document.body.appendChild(textarea)
     textarea.select()
     document.execCommand('copy')
-    document.alert('copied to clipboard')
     textarea.remove()
+    alert('copied to clipboard')
+    
+    console.log(alert)
 })
