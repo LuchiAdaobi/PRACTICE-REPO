@@ -4,39 +4,49 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"  />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"/>
-    <link rel="stylesheet" href="style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
-    <title>Location Finder</title>
+    <title>Password Generator</title>
   </head>
   <body>
-    <section class="hero hero-body container">
-        <h1 class="title">US Location Info</h1>
-        <h2 class="subtitle">Enter a zipcode to get the location info</h2>
-
-        <form id="zipForm">
-            <div class="field">
-                <div class="control has-icons-left has-icons-right">
-                  <input class="input zip is-large" type="text" placeholder="Enter Zipcode">
-                  <span class="icon is-small is-left">
-                    <i class="fas fa-map-pin"></i>
-                  </span>
-                  <span class="icon is-small is-right icon-check">
-                    <i class="fas fa-check"></i>
-                  </span>
-                  <span class="icon is-small is-right icon-remove">
-                    <i class="fas fa-remove"></i>
-                  </span>
-                </div>
-              </div>
-        </form>
-    </section>
-    </section>
-
-    <br>
+    <!-- -->
     <div class="container">
-        <div id="output"></div>
+      <h1>Password Generator</h1>
+      <div class="result-container">
+        <span id="result"></span>
+        <button class="btn" id="clipboard">
+          <i class="far fa-clipboard"></i>
+        </button>
+      </div>
+      <div class="settings">
+        <div class="setting">
+          <label>Password length</label>
+          <input type="number" id="length" min="4" max="20" value="20" />
+        </div>
+        <div class="setting">
+          <label>Include uppercase letters</label>
+          <input type="checkbox" id="uppercase" checked />
+        </div>
+        <div class="setting">
+          <label>Include lowercase letters</label>
+          <input type="checkbox" id="lowercase" checked />
+        </div>
+        <div class="setting">
+          <label>Include numbers</label>
+          <input type="checkbox" id="numbers" checked />
+        </div>
+        <div class="setting">
+          <label>Include symbols</label>
+          <input type="checkbox" id="symbols" checked />
+        </div>
+      </div>
+      <button class="btn btn-large" id="generate">Generate password</button>
     </div>
+
+    
   </body>
 </html>
